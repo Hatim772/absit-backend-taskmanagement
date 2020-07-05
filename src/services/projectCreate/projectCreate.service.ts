@@ -9,7 +9,7 @@ import config from '../../config/config';
 import { CommonService } from '../common.service';
 
 
-export default class UserService {
+export default class ProjCreatectService {
     logger: ILogger;
     constructor() {
         this.logger = new Logger(__filename);
