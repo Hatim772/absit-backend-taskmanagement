@@ -13,7 +13,6 @@ export default class ProjCreatectService {
     logger: ILogger;
     constructor() {
         this.logger = new Logger(__filename);
-        // this.userRepository = getManager().getRepository(Users);
     }
 
        /**
@@ -23,6 +22,20 @@ export default class ProjCreatectService {
     this.logger.info('Create a new project', data);
     const newUser = await getRepository(ProjectCreateDetails).create(data);
     return await getRepository(ProjectCreateDetails).save(newUser);
+  }
+
+  /**
+   * Returns a data by given user_id
+   * @param id 
+   * @param options 
+   */
+  async getByUserId(id: string | number, options?: {}): Promise<any> {
+    this.logger.info('Fetching details by id: ', id);
+    // if (options) {
+    //   return await this.entityRepository.find(options);
+    // } else if (id) {
+    //   return await this.entityRepository.find({ user_id: id });
+    // }
   }
 
 }
