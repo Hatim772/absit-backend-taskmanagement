@@ -15,6 +15,7 @@ import QuoteRouter from './routes/quote.routes';
 import CatalogRouter from './routes/catalog.routes';
 import AdminRouter from './routes/admin.routes';
 import ProjectCreateRouter from './routes/projectCreate.routes';
+import ClientRouter from './routes/client.routes';
 
 // controllers
 import Login from './controllers/Admin/loginController';
@@ -101,5 +102,7 @@ router.use('/quotes', QuoteRouter);
 router.use('/catalog', CatalogRouter);
 router.use('/admin', AdminRouter);
 router.use('/projectCreate',ProjectCreateRouter);
+router.use('/client',ClientRouter);
+
 
 export default router;

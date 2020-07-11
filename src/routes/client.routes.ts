@@ -7,7 +7,7 @@ import QuoteMiddlware from '../middlewares/quoteMiddlware';
 
 // controllers
 // import QuoteContorller from '../controllers/Quote/quoteContorller';
-import projectCreateController from '../controllers/ProjectCreate/projectCreate.controller';
+import clientController from '../controllers/client/client.controller';
 
 // validation schemas
 import {
@@ -23,17 +23,17 @@ import {
 } from '../commonFunction/validationSchema';
 import { isAdmin } from '../middlewares/isAdmin';
 
-const ProjectCreateRouter: Router = Router();
+const ClientRouter: Router = Router();
 const auth = new AuthHandler();
 const quoteMiddleware = new QuoteMiddlware();
 
-const projectCtreate = new projectCreateController();
+const client = new clientController();
 // const quote = new QuoteContorller();
 
 
-ProjectCreateRouter.post('/addProductsCreate', projectCtreate.projectCreateHandler);
-ProjectCreateRouter.get('/addProductsCreate', projectCtreate.projectCreatefetch);
-// ProjectCreateRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
+ClientRouter.post('/client', client.clientCreateHandler);
+ClientRouter.get('/client', client.clientfetch);
+// ClientRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 
 // QuoteRouter.post('/addProducts', [auth.authenticate(), validateSchema(addProductsForQuotation)], quote.addProducts);
@@ -60,4 +60,4 @@ ProjectCreateRouter.get('/addProductsCreate', projectCtreate.projectCreatefetch)
 //     quote.billingSameAsShippingAddress);
 
 
-export default ProjectCreateRouter;
+export default ClientRouter;

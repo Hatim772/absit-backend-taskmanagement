@@ -8,13 +8,13 @@ export class UsersAdditionalSettings {
   @Column({ type: 'int', width: 11 })
   user_id: number;
 
-  @Column({ type: 'varchar', length: 25, nullable: true })
+  @Column({ type: 'text',  nullable: true })
   new_product_notification: string;
 
-  @Column({ type: 'varchar', length: 25, nullable: true })
+  @Column({ type: 'text',  nullable: true })
   offer_sale_notification: string;
 
-  @Column({ type: 'varchar', length: 25, nullable: true })
+  @Column({ type: 'text',  nullable: true })
   order_update_notification: string;
 
   @Column({ type: 'json', nullable: true })
@@ -29,10 +29,10 @@ export class UsersAdditionalSettings {
   @Column({ type: 'json', nullable: true })
   samplebox_available_to: JSON;
 
-  @Column({ type: 'varchar', length: 25, nullable: true })
+  @Column({ type: 'text', nullable: true })
   available_day: string;
 
-  @Column({ type: 'varchar', length: 25, nullable: true })
+  @Column({ type: 'text', nullable: true })
   samplebox_available_day: string;
 
   @Column({ type: 'enum', enum: ['0', '1'], nullable: true, comment: '(0-Not confirmed, 1- Confirmed)' })

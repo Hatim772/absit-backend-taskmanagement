@@ -19,6 +19,7 @@ export default class projectCreateController {
           'project_image',
           'project_name',
       ]);
+      // projectCreateDataIs = JSON.parse(JSON.stringify(projectCreateDataIs));
       let isCreated = await projCreatectService.insert(req.body);
       res.status(HttpStatus.OK).send({ success: true, message: "Project created successfuly" });
   }catch (err){
@@ -30,15 +31,9 @@ export default class projectCreateController {
 async projectCreatefetch(req: Request, res: Response, next: NextFunction) {
   const projCreatectService = new ProjCreatectService();
 try {
-    // let projectCreateDataIs = _.pick(req.body, [
-    //     'user_id',
-    //     'project_image',
-    //     'project_name',
-    // ]);
-    let isCreated = await projCreatectService.getByUserId(req.body);
-    res.status(HttpStatus.OK).send({ success: true, message: "Project created successfuly" });
+    let isCreated = await projCreatectService.getByUserId(req.query.user_id);
+    res.status(HttpStatus.OK).send({ success: true, message: "Data found" , data : isCreated});
 }catch (err){
-  // let message = err.message.startsWith('ER_DUP_ENTRY') ? (err.message.includes('@') ? errors.DUPLICATE_SIGNUP_EMAIL : errors.DUPLICATE_SIGNUP_PHONE_NUMBER) : err.message;
   return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
 }
 }
