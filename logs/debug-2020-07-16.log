@@ -1,0 +1,6 @@
+2020-07-16 19:22:35 info: [app] Connected to MySQL & MongoDB
+2020-07-16 19:22:35 info: [app] Server started at http://0.0.0.0:8000
+2020-07-16 19:22:38 info: [services:task/task.service] Fetching details by id:  ============= [null]
+2020-07-16 19:25:07 info: [app] Connected to MySQL & MongoDB
+2020-07-16 19:25:07 info: [app] Server started at http://0.0.0.0:8000
+2020-07-16 19:25:10 info: [services:task/task.service] Fetching details by id:  ============= [{"user_id":"13","project_id":"4"}]

@@ -1,0 +1,78 @@
+2020-07-15 07:35:52 info: [app] Connected to MySQL & MongoDB
+2020-07-15 07:35:52 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:04:38 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:04:38 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:15:32 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:15:32 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:34:51 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:34:51 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:35:05 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:35:05 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:35:15 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:35:15 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:38:07 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:38:07 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:39:36 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:39:36 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:39:46 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:39:46 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:40:05 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:40:05 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 08:42:06 info: [app] Connected to MySQL & MongoDB
+2020-07-15 08:42:06 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:19:17 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:19:17 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:20:40 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:20:40 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:20:57 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:20:57 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:21:08 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:21:08 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:21:52 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:21:52 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:22:03 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:22:03 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:24:19 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:24:19 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:25:01 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:25:01 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:32:51 info: [services:projectCreate/projectCreate.service] Fetching details by id:  ============= [13]
+2020-07-15 09:33:50 info: [services:task/task.service] Create a new task[{"taskCompletedate":"satishwanjari17@gmail.com","task_name":"8698687989","status":"client","user_id":"13","project_id":"1"}]
+2020-07-15 09:34:32 info: [services:task/task.service] Create a new task[{"taskCompletedate":"2020-10-10","task_name":"task1","status":"client","user_id":"13","project_id":"1"}]
+2020-07-15 09:34:58 info: [app] Connected to MySQL & MongoDB
+2020-07-15 09:34:58 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 09:35:02 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 10:07:23 info: [app] Connected to MySQL & MongoDB
+2020-07-15 10:07:23 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 10:07:28 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 10:07:33 info: [services:task/task.service] Create a new task[{"taskCompletedate":"2020-10-10","task_name":"task1","status":"client","user_id":"13","project_id":"1"}]
+2020-07-15 10:08:12 info: [app] Connected to MySQL & MongoDB
+2020-07-15 10:08:12 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 10:10:31 info: [services:task/task.service] Create a new task[{"taskCompletedate":"2020-10-10","task_name":"task1","status":"client","user_id":"13","project_id":"1"}]
+2020-07-15 10:11:25 info: [services:task/task.service] Create a new task[{"taskCompletedate":"2020-10-10","task_name":"task1","status":"client","user_id":"13","project_id":"4"}]
+2020-07-15 10:11:32 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 10:11:49 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 10:13:57 info: [app] Connected to MySQL & MongoDB
+2020-07-15 10:13:57 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 13:46:49 info: [app] Connected to MySQL & MongoDB
+2020-07-15 13:46:49 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 13:48:24 info: [app] Connected to MySQL & MongoDB
+2020-07-15 13:48:24 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 13:50:21 info: [app] Connected to MySQL & MongoDB
+2020-07-15 13:50:21 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 13:50:53 info: [app] Connected to MySQL & MongoDB
+2020-07-15 13:50:53 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 13:57:15 info: [app] Connected to MySQL & MongoDB
+2020-07-15 13:57:15 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 14:04:24 info: [app] Connected to MySQL & MongoDB
+2020-07-15 14:04:24 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 14:04:29 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 14:04:59 info: [app] Connected to MySQL & MongoDB
+2020-07-15 14:04:59 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 14:05:04 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 20:32:51 info: [app] Connected to MySQL & MongoDB
+2020-07-15 20:32:51 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 20:33:01 info: [services:task/task.service] Fetching details by id:  ============= [13]
+2020-07-15 20:45:18 info: [app] Connected to MySQL & MongoDB
+2020-07-15 20:45:18 info: [app] Server started at http://0.0.0.0:8000
+2020-07-15 20:45:23 info: [services:task/task.service] Fetching details by id:  ============= [13]
