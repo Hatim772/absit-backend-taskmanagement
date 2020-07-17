@@ -16,9 +16,6 @@ export class Task {
     @Column({type:'text'})
     status : string;
 
-    @Column({type:'text',nullable: true })
-    description : string;
-
     @Column({ type: 'varchar', length: 255, nullable: true })
     task_name: string;
 
