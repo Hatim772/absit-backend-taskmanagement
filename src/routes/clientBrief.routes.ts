@@ -7,7 +7,7 @@ import QuoteMiddlware from '../middlewares/quoteMiddlware';
 
 // controllers
 // import QuoteContorller from '../controllers/Quote/quoteContorller';
-import taskController from '../controllers/Task/task.controller';
+import ClientBriefController from '../controllers/ClientBrief/clientBrief.controller';
 
 // validation schemas
 import {
@@ -23,19 +23,18 @@ import {
 } from '../commonFunction/validationSchema';
 import { isAdmin } from '../middlewares/isAdmin';
 
-const TaskRouter: Router = Router();
+const ClientBriefRouter: Router = Router();
 const auth = new AuthHandler();
 const quoteMiddleware = new QuoteMiddlware();
 
-const task = new taskController();
+const clientBrief = new ClientBriefController();
 // const quote = new QuoteContorller();
 
 
-TaskRouter.post('/task', task.taskCreate);
-TaskRouter.get('/task', task.taskfetch);
-TaskRouter.put('/task', task.taskUpdate);
-TaskRouter.get('/taskAccordingProjectFetch', task.taskAccordingProjectFetch);
-// TaskRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
+ClientBriefRouter.post('/ClientBrief', clientBrief.clientBriefHandler);
+ClientBriefRouter.get('/ClientBrief', clientBrief.clientBrieffetch);
+ClientBriefRouter.put('/ClientBrief', clientBrief.clientBriefUpdate);
+// ClientBriefRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 
 // QuoteRouter.post('/addProducts', [auth.authenticate(), validateSchema(addProductsForQuotation)], quote.addProducts);
@@ -62,4 +61,4 @@ TaskRouter.get('/taskAccordingProjectFetch', task.taskAccordingProjectFetch);
 //     quote.billingSameAsShippingAddress);
 
 
-export default TaskRouter;
+export default ClientBriefRouter;

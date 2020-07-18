@@ -17,6 +17,7 @@ import AdminRouter from './routes/admin.routes';
 import ProjectCreateRouter from './routes/projectCreate.routes';
 import ClientRouter from './routes/client.routes';
 import TaskRouter from './routes/task.routes';
+import ClientBriefRouter from './routes/clientBrief.routes';
 
 // controllers
 import Login from './controllers/Admin/loginController';
@@ -105,6 +106,7 @@ router.use('/admin', AdminRouter);
 router.use('/projectCreate',ProjectCreateRouter);
 router.use('/client',ClientRouter);
 router.use('/task',TaskRouter);
+router.use('/ClientBrief',ClientBriefRouter);
 
 
 export default router;

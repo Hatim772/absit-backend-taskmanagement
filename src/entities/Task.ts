@@ -28,7 +28,7 @@ export class Task {
     @JoinColumn({ name: 'user_id' , referencedColumnName: 'id'})
     user: Users;
 
-    @ManyToOne(type => ProjectCreateDetails)
+    // @ManyToOne(type => ProjectCreateDetails)
     @JoinColumn({ name: 'project_id', referencedColumnName: 'id' })
     project: ProjectCreateDetails;
 }

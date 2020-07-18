@@ -32,12 +32,40 @@ export default class TaskService {
    */
   async getByUserId(id: string): Promise<any> {
     this.logger.info('Fetching details by id:  ============= ', parseInt(id));
-    return await getRepository(Task).find({where:{user_id : parseInt(id)},relations:['project_id']});
+    return await getRepository(Task).find({where:{user_id : parseInt(id)},relations:['project']});
   }
 
   async getByUserIdandProjectid(options: {} | any): Promise<any> {
     this.logger.info('Fetching details by id:  ============= ',options);
     return await getRepository(Task).find({where:options});
   }
+
+
+  async update(data: {
+    id: null,
+    status: null
+  }): Promise<any> {
+
+    // console.log(" data ", data);
+
+    // var results = await 
+    getRepository(Task).findOne(data.id).then((results)=>{
+      console.log(" results ",results);
+      
+        if (data.status) {
+          results.status = data.status;
+        }
+          getRepository(Task).save(results).then((ress)=>{
+            return ress;
+          })
+          .catch((error)=>{
+            return error;
+          })
+    })
+    .catch((err)=>{
+        return err;
+    })
+  }
+
 
 }

@@ -46,6 +46,16 @@ export default class taskController {
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
+  } 
+
+  async taskUpdate(req: Request, res: Response, next: NextFunction) {
+    const taskService = new TaskService();
+    try {
+      let isCreated = await taskService.update(req.body);
+      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+    } catch (err) {
+      return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
+    }
   }
 
 }
