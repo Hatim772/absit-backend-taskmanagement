@@ -42,7 +42,7 @@ export default class ClientBriefController {
     const clientBriefService = new ClientBriefService();
     try {
       let isCreated = await clientBriefService.update(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      res.status(HttpStatus.OK).send({ success: true, message: "Data update", data: isCreated });
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
