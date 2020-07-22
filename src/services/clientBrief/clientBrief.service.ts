@@ -31,6 +31,8 @@ export default class ClientBriefService {
    */
   async getByUserId(id: {}): Promise<any> {
     this.logger.info('Fetching de tails by id:  ============= ', id);
+    console.log("id ",id);
+    
     return await getRepository(ClientBrief).find({ where: id });
   }
 

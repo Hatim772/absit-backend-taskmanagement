@@ -40,6 +40,26 @@ export default class clientController {
     }
   }
 
+  async fetchClientById(req: Request, res: Response, next: NextFunction) {
+    const clientService = new ClientService();
+    try {
+      let isCreated = await clientService.getById(req.query.client_id);
+      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+    } catch (err) {
+      return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
+    }
+  }
+
+  async clientUpdate(req: Request, res: Response, next: NextFunction) {
+    const clientService = new ClientService();
+    try {
+      let isCreated = await clientService.update(req.body);
+      res.status(HttpStatus.OK).send({ success: true, message: "Data update"});
+    } catch (err) {
+      return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
+    }
+  }
+
 
 
 

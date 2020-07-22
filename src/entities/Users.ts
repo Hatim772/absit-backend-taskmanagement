@@ -15,6 +15,9 @@ import { UserPersonalInformation } from './UserPersonalInformation';
 import { Labels } from './Labels';
 import { OrdersReference } from './OrdersReference';
 
+import { ClientProductDetails } from "./clientProduct";
+
+
 @Entity()
 export class Users {
   @PrimaryGeneratedColumn()
@@ -120,6 +123,9 @@ export class Users {
 
   @OneToMany(type => ProjectFiles, projectFiles => projectFiles.user)
   projectFiles: ProjectFiles[];
+
+  @OneToMany(type => ClientProductDetails, clientProductDetails => clientProductDetails.user)
+  clientProductDetails : ClientProductDetails;
 
   @OneToMany(type => RequestForPricing, requestForPricing => requestForPricing.user)
   requestForPricing: RequestForPricing[];

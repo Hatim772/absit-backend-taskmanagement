@@ -21,7 +21,7 @@ export default class ClientBriefController {
       ]);
       // clientBriefDataIs = JSON.parse(JSON.stringify(clientBriefDataIs));
       let isCreated = await clientBriefService.insert(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Client Brief created successfuly" });
+      res.status(HttpStatus.OK).send({ success: true, message: "Client Brief created successfuly" ,isCreated :isCreated});
     } catch (err) {
       // let message = err.message.startsWith('ER_DUP_ENTRY') ? (err.message.includes('@') ? errors.DUPLICATE_SIGNUP_EMAIL : errors.DUPLICATE_SIGNUP_PHONE_NUMBER) : err.message;
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);

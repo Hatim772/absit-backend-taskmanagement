@@ -4,7 +4,7 @@ import { ProjectCreateDetails } from "./ProjectCreate";
 import { ClientDetails } from "./Client";
 @Entity()
 
-export class ClientBrief {
+export class ClientBrief { 
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -39,7 +39,7 @@ export class ClientBrief {
     @JoinColumn({ name: 'user_id' , referencedColumnName: 'id'})
     user: Users;
 
-    // @OneToOne(type => ProjectCreateDetails)
-    @JoinColumn({ name: 'project_id', referencedColumnName: 'id' })
-    project: ProjectCreateDetails;
+    @OneToOne(type => ProjectCreateDetails, projectCreate => projectCreate.clientBrief)
+    @JoinColumn({ name: 'project_id'})
+    projectCreate: ProjectCreateDetails;
 }

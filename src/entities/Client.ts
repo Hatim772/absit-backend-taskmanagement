@@ -19,6 +19,10 @@ import { Users } from './Users';
   email: string;
 
 
+  @Column({ type: 'varchar', length: 50, nullable: true })
+  address: string;
+
+
   @Column({ type: 'varchar', length: 12, nullable: true })
   mobile_no: string;
 

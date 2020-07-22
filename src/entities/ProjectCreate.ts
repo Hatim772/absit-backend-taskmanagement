@@ -1,5 +1,6 @@
 import { Column, OneToOne, JoinColumn, Entity, PrimaryGeneratedColumn, Index } from 'typeorm';
 import { Users } from './Users';
+import { ClientBrief } from './ClientBrief';
 @Entity()
 
   export class ProjectCreateDetails {
@@ -17,6 +18,10 @@ import { Users } from './Users';
 
   @Column({ type: 'varchar', length: 255, nullable: true })
   project_image: string;
+
+  @OneToOne(type => ClientBrief, clientBrief => clientBrief.projectCreate)
+  clientBrief: ClientBrief;
+
 
   // @OneToOne(type => Users)
   @JoinColumn({ name: 'user_id' })
