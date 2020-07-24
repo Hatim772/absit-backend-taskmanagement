@@ -14,10 +14,13 @@ export default class ClientProductController {
   async add(req: Request, res: Response, next: NextFunction) {
     const clientProductService = new ClientProductService();
     try {
+		  // let file: any = req.files;
+
+      // console.log("  ==  ",file);
+      console.log("  ==  ",req.body);
       
-      // clientBriefDataIs = JSON.parse(JSON.stringify(clientBriefDataIs));
-      let isCreated = await clientProductService.insert(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Client product created successfuly" ,isCreated :isCreated});
+      // let isCreated = await clientProductService.insert(req.body);
+      // res.status(HttpStatus.OK).send({ success: true, message: "Client product created successfuly" ,isCreated :isCreated});
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }

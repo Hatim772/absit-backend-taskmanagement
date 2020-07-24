@@ -1,6 +1,9 @@
-import { Column, OneToOne, JoinColumn, Entity, PrimaryGeneratedColumn, Index } from 'typeorm';
+import { Column, OneToOne, JoinColumn, Entity,ManyToMany, PrimaryGeneratedColumn, Index, OneToMany } from 'typeorm';
 import { Users } from './Users';
 import { ClientBrief } from './ClientBrief';
+import { Task } from "./Task";
+import { type } from 'os';
+
 @Entity()
 
   export class ProjectCreateDetails {
@@ -22,6 +25,9 @@ import { ClientBrief } from './ClientBrief';
   @OneToOne(type => ClientBrief, clientBrief => clientBrief.projectCreate)
   clientBrief: ClientBrief;
 
+  @OneToMany(type => Task, task => task.project)
+  task : Task;
+    
 
   // @OneToOne(type => Users)
   @JoinColumn({ name: 'user_id' })

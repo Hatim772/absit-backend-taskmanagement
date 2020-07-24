@@ -4,6 +4,7 @@ import HttpStatus from 'http-status-codes';
 import _ from 'lodash';
 
 import TaskService from "../../services/task/task.service";
+import ProjectCreateDetails from "../../services/projectCreate/projectCreate.service";
 import config from '../../config/config';
 import messages from '../../assets/i18n/en/messages';
 import errors from '../../assets/i18n/en/errors';
@@ -14,12 +15,7 @@ export default class taskController {
   async taskCreate(req: Request, res: Response, next: NextFunction) {
     const taskService = new TaskService();
     try {
-      // let projectCreateDataIs = _.pick(req.body, [
-      //   'user_id',
-      //   'project_image',
-      //   'project_name',
-      // ]);
-      // projectCreateDataIs = JSON.parse(JSON.stringify(projectCreateDataIs));
+
       let isCreated = await taskService.insert(req.body);
       res.status(HttpStatus.OK).send({ success: true, message: "Task created successfuly" });
     } catch (err) {
@@ -30,8 +26,19 @@ export default class taskController {
 
   async taskfetch(req: Request, res: Response, next: NextFunction) {
     const taskService = new TaskService();
+    const projectcreate = new ProjectCreateDetails();
     try {
       let isCreated = await taskService.getByUserId(req.query.user_id);
+      let projectts = await projectcreate.getByUserId(req.query.user_id);
+      console.log("  projectts",projectts);
+      for (let i = 0; i < isCreated.length; i++) {
+        for (let j = 0; j < projectts.length; j++) {
+              if (isCreated[i].project_id == projectts[j].id) {
+                  isCreated[i].project_id =   projectts[j];
+                  break;
+              }
+        }
+      }
       res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);

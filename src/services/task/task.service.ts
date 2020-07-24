@@ -3,7 +3,6 @@ import * as jwt from 'jsonwebtoken';
 import _ from 'lodash'; 
 
 import { Task } from '../../entities/Task';
-import { ProjectCreateDetails } from '../../entities/ProjectCreate';
 import { Logger, ILogger } from '../../utils/logger';
 import errors from '../../assets/i18n/en/errors';
 import config from '../../config/config';
@@ -31,8 +30,10 @@ export default class TaskService {
    * @param options 
    */
   async getByUserId(id: string): Promise<any> {
-    this.logger.info('Fetching details by id:  ============= ', parseInt(id));
-    return await getRepository(Task).find({where:{user_id : parseInt(id)},relations:['project']});
+    // this.logger.info('Fetching details by id:  ============= ', parseInt(id));
+    console.log("  === id",id);
+    
+    return await getRepository(Task).find({where:{user_id : parseInt(id)}});
   }
 
   async getByUserIdandProjectid(options: {} | any): Promise<any> {
