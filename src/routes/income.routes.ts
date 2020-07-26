@@ -35,7 +35,7 @@ IncomeRouter.post('/income', income.Create);
 IncomeRouter.get('/income', income.fetch);
 IncomeRouter.put('/income', income.update);
 IncomeRouter.delete('/income', income.delete);
-IncomeRouter.get('/incomeAccordingProjectFetch', income.fetchById);
+IncomeRouter.get('/incomeAccording', income.fetchById);
 // IncomeRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 

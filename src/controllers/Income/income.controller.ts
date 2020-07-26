@@ -16,7 +16,7 @@ export default class incomeController {
     try {
 
       let isCreated = await incomeService.insert(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Task created successfuly" });
+      res.status(HttpStatus.OK).send({ success: true, message: "Income created successfuly" });
     } catch (err) {
       // let message = err.message.startsWith('ER_DUP_ENTRY') ? (err.message.includes('@') ? errors.DUPLICATE_SIGNUP_EMAIL : errors.DUPLICATE_SIGNUP_PHONE_NUMBER) : err.message;
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
@@ -26,7 +26,7 @@ export default class incomeController {
   async fetch(req: Request, res: Response, next: NextFunction) {
     const incomeService = new IncomeService();
     try {
-      let isCreated = await incomeService.getByUserId(req.query.user_id);
+      let isCreated = await incomeService.getByUserId(req.query);
       res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
@@ -36,7 +36,7 @@ export default class incomeController {
   async fetchById(req: Request, res: Response, next: NextFunction) {
     const incomeService = new IncomeService();
     try {
-      let isCreated = await incomeService.getByid(req.query);
+      let isCreated = await incomeService.getByid(req.query); 
       res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
@@ -47,7 +47,7 @@ export default class incomeController {
     const incomeService = new IncomeService();
     try {
       let isCreated = await incomeService.update(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      res.status(HttpStatus.OK).send({ success: true, message: "Data is update", data: isCreated });
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
@@ -56,7 +56,8 @@ export default class incomeController {
   async delete(req: Request, res: Response, next: NextFunction){
         const incomeService = new IncomeService();
         try {
-          let isCreated = await incomeService.delete(req.body);
+          console.log(" req.body.id ",req.query.id);
+          let isCreated = await incomeService.delete(req.query.id);
           res.status(HttpStatus.OK).send({ success: true, message: "Delete successfully", data: isCreated });
         } catch (err) {
           return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);

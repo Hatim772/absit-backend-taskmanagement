@@ -29,15 +29,15 @@ export default class IncomeService {
    * @param id 
    * @param options 
    */
-  async getByUserId(id: string): Promise<any> {
+  async getByUserId(id : {} | any): Promise<any> {
     // this.logger.info('Fetching details by id:  ============= ', parseInt(id));
     console.log("  === id",id);
     
-    return await getRepository(Income).find({where:{user_id : parseInt(id)}});
+    return await getRepository(Income).find({where:id});
   }
 
   async getByid(options: {} | any): Promise<any> {
-    this.logger.info('Fetching details by id:  ============= ',options);
+    console.log('Fetching details by id:  ============= ',options);
     return await getRepository(Income).findOne(options.id);
   }
 
@@ -76,9 +76,10 @@ export default class IncomeService {
     })
   }
 
-  async delete(options: {} | any): Promise<any> {
-    this.logger.info('Fetching details by id:  ============= ',options);
-    return await getRepository(Income).findOne(options.id);
+  async delete(id : string): Promise<any> {
+    console.log('Fetching details by id:  ============= ',id);
+    var deletes = await getRepository(Income).findOne(id);    
+    return await getRepository(Income).remove(deletes);
   }
 
 
