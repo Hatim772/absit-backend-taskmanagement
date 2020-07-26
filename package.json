@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "masterDataMigrate": "ts-node src/commonFunction/masterData.ts",
-    "start": "NODE_ENV=dev nodemon ./src/index.ts --exec ts-node",
+    "start": "NODE_ENV=prod nodemon ./src/index.ts --exec ts-node",
     "start:prod": "NODE_ENV=prod nodemon ./src/index.ts --exec ts-node",
     "start:dev": "NODE_ENV=dev nodemon ./src/index.ts --exec ts-node",
     "clean": "rimraf dist",
