@@ -19,6 +19,7 @@ import ClientRouter from './routes/client.routes';
 import TaskRouter from './routes/task.routes';
 import ClientBriefRouter from './routes/clientBrief.routes';
 import ClientProductRouter from './routes/clientProduct.routes';
+import IncomeRouter from './routes/income.routes';
 
 // controllers
 import Login from './controllers/Admin/loginController';
@@ -108,7 +109,8 @@ router.use('/projectCreate',ProjectCreateRouter);
 router.use('/client',ClientRouter);
 router.use('/task',TaskRouter);
 router.use('/ClientBrief',ClientBriefRouter);
-router.use('/ClientProduct',ClientProductRouter)
+router.use('/ClientProduct',ClientProductRouter);
+router.use('/income',IncomeRouter);
 
 
 export default router;
