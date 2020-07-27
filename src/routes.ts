@@ -20,8 +20,9 @@ import TaskRouter from './routes/task.routes';
 import ClientBriefRouter from './routes/clientBrief.routes';
 import ClientProductRouter from './routes/clientProduct.routes';
 import IncomeRouter from './routes/income.routes';
+import ExpenceRouter from './routes/expence.routes';
 
-// controllers
+// controllersExpenceRouter
 import Login from './controllers/Admin/loginController';
 import Attributes from './controllers/Admin/attributeControllers';
 import Category from './controllers/Admin/CategoryControllers';
@@ -111,6 +112,7 @@ router.use('/task',TaskRouter);
 router.use('/ClientBrief',ClientBriefRouter);
 router.use('/ClientProduct',ClientProductRouter);
 router.use('/income',IncomeRouter);
+router.use('/expence',ExpenceRouter)
 
 
 export default router;
