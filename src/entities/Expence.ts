@@ -19,6 +19,9 @@ export class Expence {
     @Column({ type: 'varchar', length: 255, nullable: true })
     expence_name: string;
 
+    @Column({ type: 'varchar', length: 255, nullable: true })
+    income_name: string;
+
     @Column({ type: 'date', nullable: true })
     expence_date: Date;
     
