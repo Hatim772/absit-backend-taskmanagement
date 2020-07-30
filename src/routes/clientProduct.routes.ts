@@ -1,5 +1,7 @@
 // Third parties
 import { Router } from 'express';
+import multer from 'multer';
+
 
 // middlwares
 import { AuthHandler } from '../middlewares/authHandler';
@@ -22,7 +24,7 @@ import {
     billingSameAsShippingAddress
 } from '../commonFunction/validationSchema';
 import { isAdmin } from '../middlewares/isAdmin';
-
+const uploads = multer();
 const ClientProductRouter: Router = Router();
 const auth = new AuthHandler();
 const quoteMiddleware = new QuoteMiddlware();
@@ -31,7 +33,7 @@ const ClientProduct = new ClientProductController();
 // const quote = new QuoteContorller();
 
 
-ClientProductRouter.post('/ClientProduct', ClientProduct.add);
+ClientProductRouter.post('/ClientProduct',  uploads.single('product_image'),ClientProduct.add);
 ClientProductRouter.get('/ClientProduct', ClientProduct.fetch);
 ClientProductRouter.put('/ClientProduct', ClientProduct.update);
 // ClientProductRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);

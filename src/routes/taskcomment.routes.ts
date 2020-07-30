@@ -8,7 +8,7 @@ import QuoteMiddlware from '../middlewares/quoteMiddlware';
 const uploads = multer();
 // controllers
 // import QuoteContorller from '../controllers/Quote/quoteContorller';
-import taskController from '../controllers/Task/task.controller';
+import taskCommentController from '../controllers/TaskComment/taskcomment.controller';
 
 // validation schemas
 import {
@@ -24,19 +24,18 @@ import {
 } from '../commonFunction/validationSchema';
 import { isAdmin } from '../middlewares/isAdmin';
 
-const TaskRouter: Router = Router();
+const TaskCommentRouter: Router = Router();
 const auth = new AuthHandler();
 const quoteMiddleware = new QuoteMiddlware();
 
-const task = new taskController();
+const taskComment = new taskCommentController();
 // const quote = new QuoteContorller();
 
 
-TaskRouter.post('/task',uploads.single('attachment'), task.taskCreate);
-TaskRouter.get('/task', task.taskfetch);
-TaskRouter.put('/task', task.taskUpdate);
-TaskRouter.get('/taskAccordingProjectFetch', task.taskAccordingProjectFetch);
-// TaskRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
+TaskCommentRouter.post('/taskComment',uploads.single('attachment'), taskComment.create);
+TaskCommentRouter.get('/taskComment', taskComment.fetch);
+TaskCommentRouter.put('/taskComment', taskComment.update);
+// TaskCommentRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 
 // QuoteRouter.post('/addProducts', [auth.authenticate(), validateSchema(addProductsForQuotation)], quote.addProducts);
@@ -63,4 +62,4 @@ TaskRouter.get('/taskAccordingProjectFetch', task.taskAccordingProjectFetch);
 //     quote.billingSameAsShippingAddress);
 
 
-export default TaskRouter;
+export default TaskCommentRouter;

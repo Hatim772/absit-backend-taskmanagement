@@ -15,7 +15,9 @@ export default class taskController {
   async taskCreate(req: Request, res: Response, next: NextFunction) {
     const taskService = new TaskService();
     try {
+      let file: any = req.file;
 
+      console.log("  ==  ",file);      
       let isCreated = await taskService.insert(req.body);
       res.status(HttpStatus.OK).send({ success: true, message: "Task created successfuly" });
     } catch (err) {

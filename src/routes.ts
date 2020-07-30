@@ -17,6 +17,7 @@ import AdminRouter from './routes/admin.routes';
 import ProjectCreateRouter from './routes/projectCreate.routes';
 import ClientRouter from './routes/client.routes';
 import TaskRouter from './routes/task.routes';
+import TaskCommentRouter from './routes/taskcomment.routes';
 import ClientBriefRouter from './routes/clientBrief.routes';
 import ClientProductRouter from './routes/clientProduct.routes';
 import IncomeRouter from './routes/income.routes';
@@ -112,7 +113,8 @@ router.use('/task',TaskRouter);
 router.use('/ClientBrief',ClientBriefRouter);
 router.use('/ClientProduct',ClientProductRouter);
 router.use('/income',IncomeRouter);
-router.use('/expence',ExpenceRouter)
+router.use('/expence',ExpenceRouter);
+router.use('/taskComment',TaskCommentRouter);
 
 
 export default router;

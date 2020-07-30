@@ -4,6 +4,8 @@ import HttpStatus from 'http-status-codes';
 import _ from 'lodash';
 
 import  ProjCreatectService  from "../../services/projectCreate/projectCreate.service";
+import ClientBriefService from "../../services/clientBrief/clientBrief.service";
+
 import config from '../../config/config';
 import messages from '../../assets/i18n/en/messages';
 import errors from '../../assets/i18n/en/errors';
@@ -14,12 +16,6 @@ export default class projectCreateController {
   async projectCreateHandler(req: Request, res: Response, next: NextFunction) {
     const projCreatectService = new ProjCreatectService();
   try {
-      let projectCreateDataIs = _.pick(req.body, [
-          'user_id',
-          'project_image',
-          'project_name',
-      ]);
-      // projectCreateDataIs = JSON.parse(JSON.stringify(projectCreateDataIs));
       let isCreated = await projCreatectService.insert(req.body);
       res.status(HttpStatus.OK).send({ success: true, message: "Project created successfuly" });
   }catch (err){
@@ -30,12 +26,30 @@ export default class projectCreateController {
 
 async projectCreatefetch(req: Request, res: Response, next: NextFunction) {
   const projCreatectService = new ProjCreatectService();
+  const clientBriefService = new ClientBriefService();
+
 try {
     let isCreated = await projCreatectService.getByUserId(req.query.user_id);
+    let isCreated2 = await clientBriefService.getByUserId(req.query);
+    for (let i = 0; i < isCreated.length; i++) {
+      for (let j = 0; j < isCreated2.length; j++) {
+          if(isCreated[i].id == isCreated2[j].project_id){
+            isCreated[i].design = isCreated2[j].project_image;
+            isCreated[i].budget = isCreated2[j].budget;
+            isCreated[i].timeline = isCreated2[j].timeline;
+          }else{
+              isCreated[i].design = null;
+              isCreated[i].budget = null;
+              isCreated[i].timeline = null;
+          }
+      }
+    }
     res.status(HttpStatus.OK).send({ success: true, message: "Data found" , data : isCreated});
 }catch (err){
   return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
 }
+
+
 }
 
 

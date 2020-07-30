@@ -1,5 +1,6 @@
 import { BeforeInsert, Column, CreateDateColumn, ManyToMany,ManyToOne, OneToMany, JoinColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, Index, OneToOne } from 'typeorm';
 import { Users } from './Users';
+import { TaskComment } from './TaskComments';
 import { ProjectCreateDetails } from "./ProjectCreate";
 @Entity()
 
@@ -27,6 +28,9 @@ export class Task {
     
     @JoinColumn({ name: 'user_id' , referencedColumnName: 'id'})
     user: Users;
+
+    @OneToMany(type => TaskComment, taskComment => taskComment.taskComment)
+    taskComment : TaskComment;
 
     @OneToMany(type => ProjectCreateDetails, project => project.task)
     @JoinColumn({ name: 'project_id',referencedColumnName : "id"})

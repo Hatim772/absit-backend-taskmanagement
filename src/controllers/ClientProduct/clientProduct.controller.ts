@@ -14,9 +14,9 @@ export default class ClientProductController {
   async add(req: Request, res: Response, next: NextFunction) {
     const clientProductService = new ClientProductService();
     try {
-		  // let file: any = req.files;
+		  let file: any = req.file;
 
-      // console.log("  ==  ",file);
+      console.log("  ==  ",file);
       console.log("  ==  ",req.body);
       
       // let isCreated = await clientProductService.insert(req.body);
