@@ -36,6 +36,7 @@ TaskRouter.post('/task',uploads.single('attachment'), task.taskCreate);
 TaskRouter.get('/task', task.taskfetch);
 TaskRouter.put('/task', task.taskUpdate);
 TaskRouter.get('/taskAccordingProjectFetch', task.taskAccordingProjectFetch);
+TaskRouter.get('/taskById', task.taskAccordingProjectFetch);
 // TaskRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 

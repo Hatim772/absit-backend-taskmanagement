@@ -33,6 +33,7 @@ const projectCtreate = new projectCreateController();
 
 ProjectCreateRouter.post('/addProductsCreate', projectCtreate.projectCreateHandler);
 ProjectCreateRouter.get('/addProductsCreate', projectCtreate.projectCreatefetch);
+ProjectCreateRouter.get('/fetchProjectById', projectCtreate.projectCreatefetchById);
 // ProjectCreateRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 

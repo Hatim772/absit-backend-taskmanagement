@@ -18,7 +18,7 @@ export default class taskCommentController {
 
       console.log("  ==  ",file);      
       let isCreated = await taskCommentService.insert(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Task created successfuly" });
+      res.status(HttpStatus.OK).send({ success: true, message: "comment created successfuly" });
     } catch (err) {
       // let message = err.message.startsWith('ER_DUP_ENTRY') ? (err.message.includes('@') ? errors.DUPLICATE_SIGNUP_EMAIL : errors.DUPLICATE_SIGNUP_PHONE_NUMBER) : err.message;
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
@@ -41,7 +41,7 @@ export default class taskCommentController {
     const taskCommentService = new TaskCommentService();
     try {
       let isCreated = await taskCommentService.update(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      res.status(HttpStatus.OK).send({ success: true, message: "Data update", data: isCreated });
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }

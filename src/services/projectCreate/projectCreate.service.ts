@@ -35,4 +35,10 @@ export default class ProjCreatectService {
 
   }
 
+  async getById(id: string): Promise<any> {
+    this.logger.info('Fetching details by id:  ============= ', parseInt(id));
+    return await getRepository(ProjectCreateDetails).findOne(id);
+
+  }
+
 }
