@@ -35,7 +35,7 @@ ContactCategoeryRouter.post('/contactCategoery', contactCategoery.Create);
 ContactCategoeryRouter.get('/contactCategoery', contactCategoery.fetch);
 ContactCategoeryRouter.put('/contactCategoery', contactCategoery.update);
 // ContactCategoeryRouter.delete('/contactCategoery', contactCategoery.delete);
-ContactCategoeryRouter.get('/contactCategoeryAccording', contactCategoery.fetchById);
+ContactCategoeryRouter.get('/contactCategoeryAccordingId', contactCategoery.fetchById);
 // ContactCategoeryRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 

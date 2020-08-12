@@ -14,9 +14,12 @@ export default class productCategoeryController {
   async Create(req: Request, res: Response, next: NextFunction) {
     const productCategoeryService = new ProductCategoeryService();
     try {
-
-      let isCreated = await productCategoeryService.insert(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Categoery created successfuly" });
+      if (req.body.categoery && req.body.user_id) {
+        let isCreated = await productCategoeryService.insert(req.body);
+        res.status(HttpStatus.OK).send({ success: true, message: "Categoery created successfuly" });
+      } else {
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       // let message = err.message.startsWith('ER_DUP_ENTRY') ? (err.message.includes('@') ? errors.DUPLICATE_SIGNUP_EMAIL : errors.DUPLICATE_SIGNUP_PHONE_NUMBER) : err.message;
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
@@ -26,8 +29,12 @@ export default class productCategoeryController {
   async fetch(req: Request, res: Response, next: NextFunction) {
     const productCategoeryService = new ProductCategoeryService();
     try {
-      let isCreated = await productCategoeryService.getByUserId(req.query);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      if (req.query.user_id) {
+        let isCreated = await productCategoeryService.getByUserId(req.query);
+        res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      } else {
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
@@ -36,18 +43,28 @@ export default class productCategoeryController {
   async fetchById(req: Request, res: Response, next: NextFunction) {
     const productCategoeryService = new ProductCategoeryService();
     try {
-      let isCreated = await productCategoeryService.getByid(req.query); 
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      if (req.query.id) {
+
+        let isCreated = await productCategoeryService.getByid(req.query);
+        res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      } else {
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
-  } 
+  }
 
   async update(req: Request, res: Response, next: NextFunction) {
     const productCategoeryService = new ProductCategoeryService();
     try {
-      let isCreated = await productCategoeryService.update(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data is update", data: isCreated });
+      if (req.body.id) {
+
+        let isCreated = await productCategoeryService.update(req.body);
+        res.status(HttpStatus.OK).send({ success: true, message: "Data is update", data: isCreated });
+      } else {
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }

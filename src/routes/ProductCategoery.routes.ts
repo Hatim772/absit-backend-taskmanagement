@@ -35,7 +35,7 @@ ProductCategoeryRouter.post('/productCategoery', productCategoery.Create);
 ProductCategoeryRouter.get('/productCategoery', productCategoery.fetch);
 ProductCategoeryRouter.put('/productCategoery', productCategoery.update);
 // ProductCategoeryRouter.delete('/productCategoery', productCategoery.delete);
-ProductCategoeryRouter.get('/productCategoeryAccording', productCategoery.fetchById);
+ProductCategoeryRouter.get('/productCategoeryAccordingId', productCategoery.fetchById);
 // ProductCategoeryRouter.post('/addProductsCreate', [auth.authenticate(), validateSchema(addProductsForQuotation)], projectCtreate.projectCreateHandler);
 
 

@@ -14,9 +14,12 @@ export default class ContactCategoeryController {
   async Create(req: Request, res: Response, next: NextFunction) {
     const contactCategoeryService = new ContactCategoeryService();
     try {
-
-      let isCreated = await contactCategoeryService.insert(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Income created successfuly" });
+      if (req.body.categoery && req.body.user_id) {
+        let isCreated = await contactCategoeryService.insert(req.body);
+        res.status(HttpStatus.OK).send({ success: true, message: "Categoery created successfuly" });
+      } else {
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       // let message = err.message.startsWith('ER_DUP_ENTRY') ? (err.message.includes('@') ? errors.DUPLICATE_SIGNUP_EMAIL : errors.DUPLICATE_SIGNUP_PHONE_NUMBER) : err.message;
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
@@ -26,8 +29,12 @@ export default class ContactCategoeryController {
   async fetch(req: Request, res: Response, next: NextFunction) {
     const contactCategoeryService = new ContactCategoeryService();
     try {
-      let isCreated = await contactCategoeryService.getByUserId(req.query);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      if (req.query.user_id) {
+        let isCreated = await contactCategoeryService.getByUserId(req.query);
+        res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      }else{
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
@@ -36,8 +43,13 @@ export default class ContactCategoeryController {
   async fetchById(req: Request, res: Response, next: NextFunction) {
     const contactCategoeryService = new ContactCategoeryService();
     try {
-      let isCreated = await contactCategoeryService.getByid(req.query); 
-      res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      if (req.query.id) {
+        let isCreated = await contactCategoeryService.getByid(req.query); 
+        res.status(HttpStatus.OK).send({ success: true, message: "Data found", data: isCreated });
+      }else{
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
+
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
@@ -46,8 +58,12 @@ export default class ContactCategoeryController {
   async update(req: Request, res: Response, next: NextFunction) {
     const contactCategoeryService = new ContactCategoeryService();
     try {
-      let isCreated = await contactCategoeryService.update(req.body);
-      res.status(HttpStatus.OK).send({ success: true, message: "Data is update", data: isCreated });
+      if (req.body.id) {
+        let isCreated = await contactCategoeryService.update(req.body);
+        res.status(HttpStatus.OK).send({ success: true, message: "Data is update", data: isCreated });
+      }else{
+        res.status(HttpStatus.BAD_REQUEST).send({ success: false, message: "Invalild data" });
+      }
     } catch (err) {
       return sendFailureResponse(err.message, HttpStatus.BAD_REQUEST, false, res);
     }
