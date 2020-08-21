@@ -24,6 +24,7 @@ import IncomeRouter from './routes/income.routes';
 import ExpenceRouter from './routes/expence.routes';
 import ContactCategoeryRouter from './routes/ContactCategoery.routes';
 import ProductCategoeryRouter from './routes/ProductCategoery.routes';
+import ProjectClientAssignmentRouter from './routes/ProjectClientAssignment.routes';
 
 
 // controllersExpenceRouter
@@ -120,7 +121,7 @@ router.use('/expence',ExpenceRouter);
 router.use('/taskComment',TaskCommentRouter);
 router.use('/contactCategoery',ContactCategoeryRouter);
 router.use('/productCategoery',ProductCategoeryRouter);
-
+router.use('/ProjectClientAssignment',ProjectClientAssignmentRouter)
 
 
 export default router;
