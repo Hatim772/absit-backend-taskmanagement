@@ -19,7 +19,7 @@
   },
   "author": "V2X Network",
   "dependencies": {
-    "aws-sdk": "^2.476.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.1",
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
